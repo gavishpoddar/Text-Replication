@@ -22,10 +22,7 @@ random.seed(2018)
 np.random.seed(2018)
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
-# Data loading path
-# tf.flags.DEFINE_string("train_data_file", "H:/tb/project0/quora/quora_duplicate_questions.tsv", "train data path.")
-# tf.flags.DEFINE_string("model_data_path", "H:/tb/project0/quora/model/", "model path for storing.")
-# tf.flags.DEFINE_string("train_data_file", "E:/data/quora-duplicate/train.tsv", "train data path.")
+
 tf.flags.DEFINE_string("train_data_file", "E:/data/quora-duplicate/train.csv", "train data path.")
 tf.flags.DEFINE_string("model_data_path", "E:/data/quora-duplicate/model/", "model path for storing.")
 
@@ -67,7 +64,6 @@ class Utils:
         print('f1:' + str(f1))
 
     def show_model_effect(self, history, model_path):
-        """将训练过程中的评估指标变化可视化"""
 
         # summarize history for accuracy
         plt.plot(history.history["acc"])
